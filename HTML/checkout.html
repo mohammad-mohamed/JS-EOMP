@@ -10,9 +10,80 @@
     <title>Checkout</title>
 </head>
 <body>
-    
+      <!-- Navbar -->
+  <nav class="navbar navbar-danger bg-danger bg-opacity-125 sticky-top">
+    <div class="container-fluid justify-content-between">
+      <img src="https://mohammad-mohamed.github.io/hostedImages/images/Portfolio/Logos/M_M.png"
+           alt="Logo" class="navbar-brand" width="60px" />
+      <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+        <nav class="navbar navbar-dark bg-danger">
+          <div class="container-fluid">
+            <ul class="navbar-nav d-flex flex-row">
+              <li class="nav-item">
+                <a class="nav-link me-5" href="../index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-5" href="about.html">About me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-5" href="product.html">Product</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-5" href="admin.html">Admin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-5" href="checkout.html">Checkout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-5" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
 
-    <script src="script/code.js"></script>
+  <main class="container-fluid3" id="checkout" data-checkout>
+    <header class="checkout-header">
+      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/5ebf8a7ff55708877075807d1c69600d7429c11df4acf86860253051ddf6245a?apiKey=0bccd99636064f128fb65b1d52624404&" alt="" class="header-image" />
+      <h1>My Checkout</h1>
+    </header>
+      <div class="row container-fluid">
+        <div class="col">
+          <table class="table table-bordered table-responsive">
+            <thead class="table-group-divider">
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider" table-checkout></tbody>
+            <tfoot class="table-group-divider">
+            </tfoot>
+          </table>
+        </div>
+      </div>
+      <a class="btn btn-secondary" id="clear" onclick='clearProducts()'>Clear Items</a>
+      <a class="btn btn-secondary" id="pay" onclick='productPayment()'>Pay Now</a>
+    </main>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-danger bg-opacity-75 text-white text-center py-3">
+      <p>&copy; <span id="current-year"></span> The Falafel Shop</p>
+    </footer>
+  
+
+    <script src="../script/checkout.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
