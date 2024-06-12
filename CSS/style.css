@@ -3,6 +3,10 @@ body{
     font-family: Poppins, sans-serif;
 }  
 
+.navbar-brand{
+  width: 60px;
+}
+
 /* index page part 1 */
 
   .container {
