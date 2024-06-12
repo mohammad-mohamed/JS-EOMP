@@ -512,3 +512,111 @@ body{
   font-family: Roboto, sans-serif;
   text-align: center;
 }
+
+/* admin part 1 */
+
+/* Main content styling */
+main.container-fluid6 {
+  padding: 2rem;
+  background-color: #f5c6cb; /* slightly lighter red for contrast */
+}
+
+main h2 {
+  color: #721c24; /* darker red */
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Button styling */
+.btn-secondary {
+  background-color: #721c24; /* darker red */
+  border: none;
+  color: #fff;
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+  background-color: #5a1a1a; /* even darker red */
+}
+
+/* Modal styling */
+
+.modal-content {
+  background-color: #f1b0b7; /* very light red */
+  color: #721c24; /* dark red */
+}
+
+.modal-header, .modal-footer {
+  border-color: #dc3545; /* same red */
+}
+
+.btn-close {
+  filter: brightness(0) invert(1);
+}
+
+/* Form styling */
+form .form-control {
+  border: 1px solid #dc3545; /* same red */
+  background-color: #f5c6cb; /* light red */
+}
+
+form .form-control::placeholder {
+  color: #721c24; /* dark red */
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: #dc3545; /* same red */
+  color: #fff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f5c6cb; /* light red */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f8d7da; /* very light red */
+}
+
+table, th, td {
+  border: 1px solid #721c24; /* dark red */
+  padding: 0.75rem;
+  text-align: center;
+}
+
+
+/* admin part 2 heading */
+.centered-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  min-height: 198px;
+  align-items: center;
+  justify-content: center;
+  padding: 97px 60px 76px;
+  color: var(--third-color, #fff8ee);
+  font: 700 35px 'Roboto', sans-serif;
+}
+
+@media (max-width: 991px) {
+  .centered-content {
+    padding: 0 20px;
+    white-space: initial;
+  }
+}
+
+.background-image5 {
+  z-index: -10;
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}

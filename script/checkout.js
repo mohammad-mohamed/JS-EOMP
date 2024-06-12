@@ -29,7 +29,7 @@ function cartItems() {
 
         checkoutTable.innerHTML += `
             <tr>
-                <td>${product.name}</td>
+                <td>${product.productName}</td>
                 <td>${quantity}</td>
                 <td>${amount}</td>
                 <td>${total}</td>
