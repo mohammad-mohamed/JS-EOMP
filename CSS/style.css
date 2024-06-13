@@ -318,82 +318,198 @@ body{
     display: flex;
     flex-direction: column;
     padding: 0 20px;
-}
-.our-story-title {
+  }
+  
+  .our-story-title {
     color: var(--primary-color, #c33);
-    text-align: justify;
-    align-self: center;
+    text-align: center; /* Centering the title */
     font: 700 35px Roboto, sans-serif;
-}
-.our-story-content {
+  }
+  
+  .our-story-content {
     margin-top: 36px;
     width: 100%;
-}
-@media (max-width: 991px) {
+  }
+  
+  @media (max-width: 991px) {
     .our-story-content {
-        max-width: 100%;
+      max-width: 100%;
     }
-}
-.content-columns {
+  }
+  
+  .content-columns {
     gap: 20px;
     display: flex;
-}
-@media (max-width: 991px) {
+    justify-content: center; /* Centering the columns */
+  }
+  
+  @media (max-width: 991px) {
     .content-columns {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0px;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px; /* Maintaining gap between columns on small screens */
     }
-}
-.text-column {
+  }
+  
+  .text-column {
     display: flex;
     flex-direction: column;
     line-height: normal;
     width: 50%;
-    margin-left: 0px;
-}
-@media (max-width: 991px) {
+    margin-left: 40px;
+  }
+  
+  @media (max-width: 991px) {
     .text-column {
-        width: 100%;
+      width: 100%;
     }
-}
-.text-content {
+  }
+  
+  .text-content {
     color: var(--second-color, #2a435d);
     text-align: justify;
     margin-top: 22px;
     font: 400 18px Roboto, sans-serif;
-}
-@media (max-width: 991px) {
+  }
+  
+  @media (max-width: 991px) {
     .text-content {
-        max-width: 100%;
-        margin-top: 40px;
+      max-width: 100%;
+      margin-top: 40px;
     }
-}
-.image-column {
+  }
+  
+  .image-column {
     display: flex;
-    flex-direction: column;
-    line-height: normal;
+    justify-content: center; /* Centering the image within its column */
+    align-items: center; /* Centering the image within its column */
     width: 50%;
-    margin-left: 20px;
-}
-@media (max-width: 991px) {
+  }
+  
+  @media (max-width: 991px) {
     .image-column {
-        width: 100%;
+      width: 100%;
+      margin-top: 20px; /* Adding margin for separation on small screens */
     }
-}
-.responsive-image {
-    aspect-ratio: 1.72;
-    object-fit: auto;
-    object-position: center;
-    width: 100%;
-    flex-grow: 1;
-}
-@media (max-width: 991px) {
+  }
+  
+  .responsive-image {
+    object-fit: cover; /* Ensuring the image covers its container */
+    width: 100%; /* Making the image take full width of its container */
+    max-width: 400px; /* Limiting the maximum width */
+    height: auto; /* Maintaining aspect ratio */
+    border: 2px solid #ccc; /* Adding a border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding a subtle shadow */
+    border-radius: 8px; /* Adding rounded corners */
+  }
+  
+  @media (max-width: 991px) {
     .responsive-image {
-        max-width: 100%;
-        margin-top: 30px;
+      max-width: 100%;
+      margin-top: 30px;
     }
+  }
+  
+
+/* about part 3 */
+
+/* Scoped styles for the team section */
+.team-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* Increased gap for better spacing */
 }
+
+.team-info {
+  text-align: center;
+  color: var(--second-color, #2a435d);
+}
+
+.team-heading {
+  font: 700 35px Roboto, sans-serif;
+}
+
+.team-intro {
+  font: 400 18px Roboto, sans-serif;
+  margin-bottom: 50px; /* Adjusted margin for better spacing */
+}
+
+.members-row {
+  display: flex;
+  justify-content: center; /* Centering the row */
+  gap: 60px; /* Increased gap for better spacing */
+}
+
+@media (max-width: 991px) {
+  .members-row {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center; /* Centering columns on small screens */
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering items in the column */
+  flex: 1;
+  max-width: 400px; /* Ensure all columns have a consistent max-width */
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering content in member info */
+  text-align: center;
+  color: var(--primary-color, #c33);
+}
+
+.member-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  background-color: var(--3rd-color, #fff8ee);
+  border: 3px solid rgba(204, 51, 51, 1);
+  border-radius: 50%; /* Perfect circle */
+  width: 400px; /* Fixed width */
+  height: 400px; /* Fixed height */
+  padding: 20px; /* Padding inside the circle */
+  box-sizing: border-box; /* Include padding and border in width and height */
+}
+
+@media (max-width: 991px) {
+  .member-details {
+    padding: 20px;
+    margin-top: 20px; /* Adjusted margin for small screens */
+  }
+}
+
+.member-photo {
+  width: 150px; /* Adjusted size for better fit */
+  height: 150px; /* Adjusted size for better fit */
+  object-fit: cover; /* Ensure the photo fits well */
+  border: 5px solid rgba(204, 51, 51, 1);
+  border-radius: 50%;
+  margin-bottom: 60px; /* Spacing between photo and title */
+}
+
+.member-title {
+  font: 700 20px Roboto, sans-serif; /* Adjusted font size */
+  margin-bottom: 10px; /* Spacing between title and description */
+}
+
+.member-description {
+  font: 400 16px Roboto, sans-serif; /* Adjusted font size */
+}
+
+@media (max-width: 991px) {
+  .column {
+    width: 100%;
+  }
+}
+
 
 /* product part 1 */
 
@@ -459,11 +575,13 @@ body{
 
 /* checkout part 1 */
 
+/* Maintain existing styles for the header and container */
+
 .container-fluid3 {
   display: flex;
   flex-direction: column;
-  /* color: var(--3rd-color, #fff8ee); */
 }
+
 .checkout-header {
   display: flex;
   flex-direction: column;
@@ -475,13 +593,17 @@ body{
   justify-content: center;
   padding: 93px 60px 72px 100px;
   font: 700 35px Roboto, sans-serif;
+  margin-bottom: 50px;
+
 }
+
 @media (max-width: 991px) {
   .checkout-header {
-    max-width: 100%;
-    padding: 0 20px;
+      max-width: 100%;
+      padding: 0 20px;
   }
 }
+
 .header-image {
   z-index: -10;
   position: absolute;
@@ -491,27 +613,51 @@ body{
   object-fit: cover;
   object-position: center;
 }
-.table {
-  background-color: var(--primary-color, #c33);
-  margin-left: 140px;
-  align-self: center;
-  z-index: 10;
+
+/* New Checkout Table Styling */
+table.table {
   width: 100%;
-  max-width: 1220px;
-  font-size: 25px;
-  font-weight: 400;
+  border-collapse: collapse;
+  margin-left: 0; /* Adjust margin if needed */
 }
-@media (max-width: 991px) {
-  .table {
-    max-width: 100%;
-    flex-wrap: wrap;
-    padding: 0 20px;
-  }
+
+thead {
+  background-color: #dc3545; /* same red as admin */
+  color: #fff;
 }
-.table th, .table td {
-  font-family: Roboto, sans-serif;
+
+tbody tr:nth-child(even) {
+  background-color: #f5c6cb; /* light red */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f8d7da; /* very light red */
+}
+
+table, th, td {
+  border: 1px solid #721c24; /* dark red */
+  padding: 0.75rem;
   text-align: center;
 }
+
+/* Button styling */
+.btn-secondary {
+  background-color: #721c24; /* darker red */
+  border: none;
+  color: #fff;
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+  background-color: #5a1a1a; /* even darker red */
+}
+
+  @media (max-width: 991px) {
+        .table {
+          max-width: 100%;
+        flex-wrap: wrap;
+        padding: 0 20px;
+      }
+    }
 
 /* admin part 1 */
 
