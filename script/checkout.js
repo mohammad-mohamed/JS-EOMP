@@ -8,7 +8,12 @@ let totalAmountElement = document.getElementById('total-amount'); // Select the 
 
 function cartItems() {
     if (cart.length === 0) {
-        checkoutTable.innerHTML = "<tr><td colspan='4'>Add items to your cart</td></tr>";
+        checkoutTable.innerHTML = `
+            <div class="d-flex col='4' justify-content-center">
+                <div class="spinner-border" role="status"></div>
+                <p>No Products Found</p>
+            </div>
+            `;
         totalAmountElement.textContent = 'R0'; // Initialize total amount display
         return;
     }
