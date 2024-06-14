@@ -7,7 +7,7 @@ if (!storedProducts) {
     const defaultProducts = [
         {
             id: 1,
-            productName: 'Raw Falafel mix',
+            productName: 'Falafel',
             image: 'https://mohammad-mohamed.github.io/hostedImages/images/JS_EOMP/product/raw-falafel.jpg',
             category: 'Food',
             amount: 50
@@ -28,18 +28,26 @@ if (!storedProducts) {
         },
         {
             id: 4,
-            productName: 'Shata',
-            image: 'https://mohammad-mohamed.github.io/hostedImages/images/JS_EOMP/product/Shata.jpeg',
-            category: 'Food',
-            amount: 15
-        },
-        {
-            id: 5,
             productName: 'Pita',
             image: 'https://mohammad-mohamed.github.io/hostedImages/images/JS_EOMP/product/pitas.jpg',
             category: 'Food',
             amount: 25
         },
+        {
+            id: 5,
+            productName: 'Shata',
+            image: 'https://mohammad-mohamed.github.io/hostedImages/images/JS_EOMP/product/Shata.jpeg',
+            category: 'Sauce',
+            amount: 15
+        },
+        {
+            id: 6,
+            productName: 'Lemonade',
+            image: 'https://mohammad-mohamed.github.io/hostedImages/images/JS_EOMP/product/lemonade.jpg',
+            category: 'Drink',
+            amount: 10
+        },
+        
     ];
     localStorage.setItem('products', JSON.stringify(defaultProducts));
     storedProducts = JSON.stringify(defaultProducts);
@@ -47,19 +55,20 @@ if (!storedProducts) {
 let products = JSON.parse(storedProducts);
 
 let productWrapper = document.querySelector('[data-products]');
+
 function displayProducts(args) {
     productWrapper.innerHTML = "";
     try {
         if (args.length) {
             args.forEach((product) => {
                 productWrapper.innerHTML += `
-                <div class="col">
-                    <div class="card">
-                        <img src="${product.image}" class="card-img-top h-50 w-50 img-fluid align-self-center" alt="${product.id}">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4">
+                    <div class="card h-100">
+                        <img src="${product.image}" class="card-img-top" alt="${product.id}">
                         <div class="card-body">
                             <h5 class="card-title">${product.productName}</h5>
                             <p class="card-text">${product.category}</p>
-                            <p class="card-text">${product.amount}</p>
+                            <p class="card-text">R${product.amount}</p>
                             <a class="btn btn-secondary" id="cart" onclick='addToCart(${JSON.stringify(product)})'>Add To Cart</a>
                         </div>
                     </div>
@@ -75,9 +84,14 @@ function displayProducts(args) {
     } catch (e) {
         alert('Error Loading Products');
     }
-};
+}
 
 displayProducts(products);
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('#counter').textContent = cart.length || 0
+})
+
 
 let productSearch = document.querySelector('[data-search-product]');
 productSearch.addEventListener('input', () => {
@@ -90,6 +104,7 @@ productSearch.addEventListener('input', () => {
         alert('Function is under maintenance');
     }
 });
+
 
 let productSort = document.querySelector('.btn');
 let highest = false;
@@ -108,11 +123,24 @@ productSort.addEventListener('click', () => {
     }
 });
 
+let categoryFilter = document.getElementById('category-filter');
+categoryFilter.addEventListener('change', () => {
+    try {
+        let category = categoryFilter.value;
+        let filteredProducts = category === 'all' ? products : products.filter(item => item.category === category);
+        displayProducts(filteredProducts);
+    } catch (e) {
+        alert('Error Filtering Products');
+    }
+});
+
 let cart = JSON.parse(localStorage.getItem('checkout')) || [];
 function addToCart(product) {
     try {
         cart.push(product);
         localStorage.setItem('checkout', JSON.stringify(cart));
+        document.querySelector('#counter').textContent = 
+        cart.length || 0
     } catch (e) {
         alert('The Checkout is under maintenance');
     }

@@ -1,14 +1,15 @@
-// Adding and removing objects from an empty array
 // Footer year
 document.querySelector('#current-year').textContent = new Date().getFullYear();
 
 // Getting my products from the localStorage to display in my table
 let cart = JSON.parse(localStorage.getItem('checkout')) || [];
 let checkoutTable = document.querySelector('[table-checkout]');
+let totalAmountElement = document.getElementById('total-amount'); // Select the total amount element
 
 function cartItems() {
     if (cart.length === 0) {
         checkoutTable.innerHTML = "<tr><td colspan='4'>Add items to your cart</td></tr>";
+        totalAmountElement.textContent = 'R0'; // Initialize total amount display
         return;
     }
 
@@ -19,6 +20,8 @@ function cartItems() {
         groupedItems[item.id].push(item);
         return groupedItems;
     }, {});
+
+    let totalAmount = 0;
 
     for (let id in cartProducts) {
         let productGroup = cartProducts[id];
@@ -31,12 +34,17 @@ function cartItems() {
             <tr>
                 <td>${product.productName}</td>
                 <td>${quantity}</td>
-                <td>${amount}</td>
-                <td>${total}</td>
+                <td>R${amount}</td>
+                <td>R${total}</td>
             </tr>
         `;
+
+        totalAmount += total;
     }
+
+    totalAmountElement.textContent = `R${totalAmount}`; // Update total amount display
 }
+
 cartItems();
 
 // This function is to clear the products in my table and is linked to onclick
