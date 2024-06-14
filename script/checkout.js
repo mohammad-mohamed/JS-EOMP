@@ -62,6 +62,6 @@ function clearProducts() {
 // This function is for product payment and clear products on my table
 function productPayment() {
     localStorage.removeItem('checkout');
-    alert('Payment Successful');
+    alert('Thank you for purchasing');
     location.reload();
 }
