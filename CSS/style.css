@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
 body {
   background-color: #ffd1d1;
-  font-family: Poppins, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .navbar-brand {
@@ -283,10 +285,19 @@ body {
 }
 
 .title {
-  color: var(--second-color, #2a435d);
+  color: var(--second-color, #000000);
   font: 700 20px Roboto, sans-serif;
+  animation: glow2 1.5s infinite alternate;
 }
 
+@keyframes glow2 {
+  from {
+    text-shadow: 0 0 12px rgb(43, 43, 43), 0 0 24px  rgb(43, 43, 43), 0 0 36px  rgb(43, 43, 43), 0 0 48px  rgb(43, 43, 43);
+  }
+  to {
+    text-shadow: 0 0 10px rgb(75, 0, 0), 0 0 20px rgb(75, 0, 0), 0 0 30px rgb(75, 0, 0), 0 0 40px rgb(75, 0, 0);
+  }
+}
 .subtitle {
   color: var(--primary-color, #c33);
   margin-top: 14px;
@@ -512,6 +523,10 @@ body {
   line-height: normal;
   width: 50%;
   margin-left: 40px;
+  background-color: rgba(255, 248, 238, 0.9); /* Lighter background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  padding: 20px; /* Padding inside the box */
+  border-radius: 8px; /* Rounded corners */
 }
 
 @media (max-width: 991px) {
@@ -556,6 +571,11 @@ body {
   border: 2px solid #ccc; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   border-radius: 8px; 
+  transition: transform 0.3s ease-in-out; /* Transition for hover effect */
+}
+
+.responsive-image:hover {
+  transform: scale(1.05); /* Scale up on hover */
 }
 
 @media (max-width: 991px) {
@@ -569,101 +589,107 @@ body {
 /* about part 3 */
 
 .team-section {
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 40px; 
-margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; 
+  margin-bottom: 20px;
 }
 
 .team-info {
-text-align: center;
-color: var(--second-color, #2a435d);
+  text-align: center;
+  color: var(--second-color, #2a435d);
 }
 
 .team-heading {
-font: 700 35px Roboto, sans-serif;
+  font: 700 35px Roboto, sans-serif;
 }
 
 .team-intro {
-font: 400 18px Roboto, sans-serif;
-margin-bottom: 50px; 
+  font: 400 18px Roboto, sans-serif;
+  margin-bottom: 50px; 
 }
 
 .members-row {
-display: flex;
-justify-content: center; 
-gap: 60px; 
+  display: flex;
+  justify-content: center; 
+  gap: 60px; 
 }
 
 @media (max-width: 991px) {
-.members-row {
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-  align-items: center; 
-}
+  .members-row {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center; 
+  }
 }
 
 .column {
-display: flex;
-flex-direction: column;
-align-items: center; 
-flex: 1;
-max-width: 400px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  flex: 1;
+  max-width: 400px; 
 }
 
 .member-info {
-display: flex;
-flex-direction: column;
-align-items: center; 
-text-align: center;
-color: var(--primary-color, #c33);
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
+  color: var(--primary-color, #c33);
 }
 
 .member-details {
-display: flex;
-flex-direction: column;
-align-items: center; 
-background-color: var(--3rd-color, #fff8ee);
-border: 3px solid rgba(204, 51, 51, 1);
-border-radius: 50%; 
-width: 400px; 
-height: 400px; 
-padding: 20px; 
-box-sizing: border-box; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  background-color: var(--3rd-color, #fff8ee);
+  border: 3px solid rgba(204, 51, 51, 1);
+  border-radius: 50%; 
+  width: 400px; 
+  height: 400px; 
+  padding: 20px; 
+  box-sizing: border-box; 
 }
 
 @media (max-width: 991px) {
-.member-details {
-  padding: 20px;
-  margin-top: 20px; 
-}
+  .member-details {
+    padding: 20px;
+    margin-top: 20px; 
+  }
 }
 
 .member-photo {
-width: 150px; 
-height: 150px; 
-object-fit: cover; 
-border: 5px solid rgba(204, 51, 51, 1);
-border-radius: 50%;
-margin-bottom: 60px; 
+  width: 150px; 
+  height: 150px; 
+  object-fit: cover; 
+  border: 5px solid rgba(204, 51, 51, 1);
+  border-radius: 50%;
+  margin-bottom: 60px; 
+  transition: transform 0.3s ease-in-out; /* Transition for hover effect */
+}
+
+.member-photo:hover {
+  transform: scale(1.05); /* Scale up on hover */
 }
 
 .member-title {
-font: 700 20px Roboto, sans-serif; 
-margin-bottom: 10px; 
+  font: 700 20px Roboto, sans-serif; 
+  margin-bottom: 10px; 
 }
 
 .member-description {
-font: 400 16px Roboto, sans-serif; 
+  font: 400 16px Roboto, sans-serif; 
 }
 
 @media (max-width: 991px) {
-.column {
-  width: 100%;
+  .column {
+    width: 100%;
+  }
 }
-}
+
 
 
 /* product part 1 */
